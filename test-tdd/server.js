@@ -14,10 +14,10 @@ app.use(parser.urlencoded({ extended: false }))
 // parse application/json
 app.use(parser.json())
 
-const postsHandler = users ({axios})
+const postsHandlers = posts ({services})
 
 // app.get('/', usersHandlers.get)
-app.post('/',authenticate, postHandlers.post)
+app.post('/',authenticate, postsHandlers.post)
 // app.put('/:id', usershandlers.put)
 // app.delete('/:id', usershandlers.delete)
 
@@ -25,3 +25,5 @@ app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}!`)
 })
 
+
+module.exports = app
